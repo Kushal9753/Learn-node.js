@@ -1,3 +1,7 @@
+var fs = require('fs');
+
+fs.writeFileSync("kushal.txt", "my name is kushal sahu learning node.js")
+
 // console.log(20+20);
 // console.log("kushal");
 
