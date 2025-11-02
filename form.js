@@ -27,7 +27,21 @@ http
         req.on('end', ()=>{
           let rawData = Buffer.concat(dataBody).toString();
           let readableData = queryString.parse(rawData)
-          console.log(readableData);
+          let dataString = "My name is "+readableData.name+ " and my email id is "+readableData.email;
+          console.log(dataString);
+          // fs.writeFileSync("text/"+readableData.name+".text", dataString);
+          // console.log("file created");
+
+          fs.writeFile("text/" + readableData.name + ".text", dataString, 'utf-8', (err)=>{
+            if(err){
+              resp.end("internal server error")
+              return false;
+            }else{
+              console.log("file created");
+            }
+          })
+          
+
           
         })
         resp.write("<h1>Data submited</h1>");
