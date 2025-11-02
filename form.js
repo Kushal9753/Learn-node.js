@@ -28,14 +28,3 @@ http.createServer((req,resp)=>{
 }).listen(3200)
 
 
-
-
-// http.createServer((req, resp)=>{
-//   resp.writeHead(200, {"content-type": 'text/html'})
-//   console.log(req.url);
-  
-//   
-//   resp.end()
-// }).listen(3200)
-
-
